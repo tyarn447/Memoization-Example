@@ -1,0 +1,45 @@
+
+Question Project Solves:
+
+
+There are n trading posts along a river. At any of the posts you can rent a canoe to be returned at any other post downstream. (It is next to impossible to paddle upstream.) The trading posts are numbered 0..(n-1), and if i < j, then trading post i is upstream from trading post j, i.e., you can rent a canoe at i and return it at j. For each possible departure point i, and each possible arrival point j, the cost of a rental from i to j is known. However, it can happen that the cost of renting from i to j is higher than the total cost of a series of shorter rentals. In this case, you can return the first canoe at some post k between i and j and continue your journey on a second canoe. There is no extra charge for changing canoes in this way.
+
+Write a program that reads as input the costs for the various rentals and finds the minimum cost of a trip by canoe from trading post i to trading post j, where 0 <= i < j < n. Your program must use the technique of dynamic programming to solve this problem.
+
+Input/Output
+
+The name of the input file is specified as the first (and only) command line argument. The first line of the input file contains a positive integer n (greater than 1) denoting the total number of trading posts. On the remaining lines of the input file is the cost of a rental between each possible departure point and each possible arrival point. Each such line contains three non-negative integers: i, j, and r(i, j) where i and j are the departure and arrival posts, and r(i, j) is the cost (in dollars) of a canoe rental from i to j.
+
+You may assume that the input file is formatted correctly according to the above specifications.
+
+After having read the input file, your program should prompt the user for a starting post number i and an ending post number j. If both the post numbers satisfy the constraints on starting and ending post numbers, your program should print the least cost from post i to post j, and then print the individual rentals along the path (and the cost of each rental). If the post numbers do not satisfy the constraints on starting and ending post numbers (unless the input indicates end of the program as stated in the next paragraph), your program should print a suitable error message.
+
+After having processed the starting and ending post numbers as above, your program should prompt the user again for another pair of starting and ending post numbers. Your program should halt when the user enters 0 and 0 for the starting and ending post numbers.
+
+Here is a sample input file.
+
+	  3
+	  0 2 12
+	  1 2 5
+	  0 1 6
+	
+In this case, there are three trading posts, and, for example, the cost of renting a canoe at trading post 1 and returning it at trading post 2 is $5. For this input file, your output should look like (note that the numbers after the colon in the prompts are entered by the user):
+	  Enter the starting post: 0
+	  Enter the ending post: 2
+	  The least cost from 0 to 2 is $11 as follows:
+	  0 -> 1 ($6).
+	  1 -> 2 ($5).
+
+	  Enter the starting post: 1
+	  Enter the ending post: 0
+	  Error in input.
+
+	  Enter the starting post: 1
+	  Enter the ending post: 2
+	  The least cost from 1 to 2 is $5 as follows:
+	  1 -> 2 ($5).
+	  
+	  Enter the starting post: 0
+	  Enter the ending post: 0
+          End of program.
+	
