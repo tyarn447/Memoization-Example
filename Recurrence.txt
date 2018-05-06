@@ -1,0 +1,47 @@
+Author: Taylor Yarn
+Reccurence Relation:
+Where B(i,j) represents the cheapest cost of getting from rental post i to rental post j
+and InputMatrix(i,j) represents the cost of getting from rental post i to j without
+stopping at any rental posts inbetween
+
+__________________________________________________________________________________________________
+
+For all B(i,j) where i <= j, B(i,j) = {0 if i=j				}
+    	       	       	     	      {InputMatrix(i,j) if i+1 = j	}
+				      {Otherwise:	       	 	}
+				      {Minimum of			}	
+				      {InputFile(i,J)			}
+				      {B(i,i+1) + B(i+1,j)		}
+				      {B(i,i+2) + B(i+2,j)		}
+				      {...				}	
+				      {B(i,j-1) + B(j-1,j)		}
+
+To explain this recurrence relation is to essentially explain how
+what I call the "cheapMatrix" in my program is made. To begin, there are 3 possibilities
+for each (i,j) in cheapMatrix.
+The first is that i and j are equal, in which case the answer must be 0 because
+you cannot go from a rental post to itself. The second is that i + 1= j,
+in this case the rental post i is right next to rental post j, and so there is only
+one possible way to go from i to j. The third way,the otherwise in
+this case where B(i,j) matches neither of the previous two cases,
+essentially looks at all the possible ways to get from the i to j
+while also stopping at any point in between. However this does not
+mean we have to look at every single path to figure this out. Instead
+we simply have to look at every case of the starting point i, going to
+another point before j, and then going to j. How this works is that
+because we assume we have already found the optimal way to go from
+point lets say i to i+2, and the optimal way to go from i+2 to j, we
+dont have to consider that maybe i went to i+1 and then to i+2 and
+then to j, because we have the optimal path to get from i to i+2
+already so we dont care about any other possibilites.Therefore if we look at
+first going from i to j without stopping at any inbetween rental
+places, and then compare that to every single way to go from i to j
+and stopping at a place inbetween, we are essentially looking at every
+way to go from i to j without computing every path, thus cutting down
+on our complexity time significantly.
+We then pull the minimum value out of this comparison and we have the
+optimal cost of getting from rental post i to j. We can then store
+this optimal value in our "cheapMatrix" so then if we are computing
+how to get from i to j+1 to put in our "cheapMatrix" we do not have to
+calculate this(going from i to j) all again, we can simply pull the
+value from our "cheapMatrix" to use for the calculation.

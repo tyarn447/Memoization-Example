@@ -1,0 +1,36 @@
+Author: Taylor Yarn
+
+Compiling:
+To compile this file, one must first navigate to the directory tyarn-LColouring from the command
+line. After one has navigated to this directory, one must simply type in either make or make
+bestRental to compile the program correctly as the makefile is completely functional and correct.
+
+Running:
+A prerequisite to run this program correctly is that one must first have an input file
+to give to the program to get data out of. I have included a few of these input files for
+the purpose of testing my program.
+To run the program one must type in the executable, followed by the valid input file
+they want the data to be read from.
+For example if I am using the input file Test2 and the program has already been compiled
+I would run the program with the command ./bestRental Test2
+After this command is run the program will prompt the user for the input of what information
+they want to ascertain from the program. For example If I wanted to find the cheapest way
+to get from rental post 0 to rental post 2 I would input 0 and press enter
+Then I would input 2 and press enter after this as well, then the
+program would write the answer to the terminal.
+The program will continue asking the user for inputs and outputting the answers to the terminal
+until the user inputs 0 and then 0 which will end the program. If the user inputs an incorrect
+rental post the program will output a suitable error message.
+
+What this program accomplishes and does not accomplish:
+With respect to the assignment requirements, I believe this program accomplishes all that the
+assignment asks. To elaborate, the program will only run if there is a valid file
+after the executable on the cmd line. The program then correctly reads in the data and
+computes the matrix B where B(i,j) represents the cheapest cost of getting from
+rental post i to rental post j. After this is done the program will prompt the user for input
+and print the answers of every input which includes the cheapest cost of getting from
+the starting point the user inputted and the ending point the user inputted as well as
+the path that one would take to achieve this cheapest cost of rentals
+until the program is given the input 0 0 and then the program ends.
+Once the program stops asking for input, it will close the inputfile and
+deallocate all the memory on the heap that the program has access to.

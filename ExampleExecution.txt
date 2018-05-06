@@ -1,0 +1,56 @@
+tyarn@lab-mcsp-14:~/tyarn-canoeRental$ make
+g++ -c main.cc
+g++ -c Helper.cc
+g++ main.o Helper.o -o bestRental
+tyarn@lab-mcsp-14:~/tyarn-canoeRental$ ./bestRental Test3 output.txt
+Usage: ./bestRental <input file name>
+tyarn@lab-mcsp-14:~/tyarn-canoeRental$ ./bestRental Test3
+0 6 12 
+6 0 3 
+12 3 0 
+________________
+
+0 6 9 
+6 0 3 
+9 3 0 
+if you wish to end the program please input 0 after both questions
+Enter the starting post : 0
+Enter the ending post : 2
+This is the minimum cost to get from rental node 0 to rental node 2 : ($9)
+The path of rental places to go from node 0 to node 2 to get this minimum cost is
+0 ---> 1 ($6)
+1 ---> 2 ($3)
+
+
+if you wish to end the program please input 0 after both questions
+Enter the starting post : 0
+Enter the ending post : 1
+This is the minimum cost to get from rental node 0 to rental node 1 : ($6)
+The path of rental places to go from node 0 to node 1 to get this minimum cost is
+0 ---> 1 ($6)
+
+
+if you wish to end the program please input 0 after both questions
+Enter the starting post : 1
+Enter the ending post : 2
+This is the minimum cost to get from rental node 1 to rental node 2 : ($3)
+The path of rental places to go from node 1 to node 2 to get this minimum cost is
+1 ---> 2 ($3)
+
+
+if you wish to end the program please input 0 after both questions
+Enter the starting post : 2 
+Enter the ending post : 1
+Error in program input
+if you wish to end the program please input 0 after both questions
+Enter the starting post : 1
+Enter the ending post : 1
+This is the minimum cost to get from rental node 1 to rental node 1 : ($0)
+The path of rental places to go from node 1 to node 1 to get this minimum cost is
+
+
+if you wish to end the program please input 0 after both questions
+Enter the starting post : 0
+Enter the ending post : 0
+Ending program
+
